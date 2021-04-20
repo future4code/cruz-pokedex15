@@ -17,8 +17,8 @@ function PokemonCard() {
             <Descprition>
                 <h1>{pokemon.name}</h1>
                 <Skills>
-                    {pokemon.types[0] && <span className="grass">{pokemon.types[0].type.name}</span>}
-                    {pokemon.types[1] && <span className="poison">{pokemon.types[1].type.name}</span>}
+                    {pokemon.types[0] && <span className={pokemon.types[0].type.name}>{pokemon.types[0].type.name}</span>}
+                    {pokemon.types[1] && <span className={pokemon.types[1].type.name}>{pokemon.types[1].type.name}</span>}
                 </Skills>
             </Descprition>
         </CardContainer>
