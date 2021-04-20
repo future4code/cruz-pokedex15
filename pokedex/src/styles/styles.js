@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: 1200px;
+  width: 1100px;
   display: flex;
   align-items: center;
 `;
@@ -36,3 +36,34 @@ export const Container = styled.div`
   }
 `
  */
+
+export const Skills = styled.div`
+  margin-top: 14px;
+  color: #fff;
+  & .grass {
+    background-color: #9bcc50;
+  }
+  & .poison {
+    background-color: #b97fc9;
+  }
+  & .fire {
+    background-color: #fd7d24;
+  }
+  & .water {
+    background-color: #4592c4;
+  }
+  & .flying {
+    background-color: #3dc7ef;
+  }
+  & .bug {
+    background-color: #729f3f;
+  }
+  & span {
+    font-size: 0.9rem;
+    padding: 6px;
+    border-radius: 3px;
+  }
+  & span:not(:first-of-type) {
+    margin-left: 6px;
+  }
+`
