@@ -17,7 +17,6 @@ export default function Details() {
         try {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
             setPokemon(response.data)
-            console.log(response.data)
             setLoading(false)
         }
         catch (error) {
