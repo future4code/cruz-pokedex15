@@ -7,6 +7,5 @@ export default function Pokedex() {
         <h1>Pokedex</h1>
         <button onClick={() => goToHome(history)}>Home</button>
         <button onClick={() => goToPokedex(history)}>Pokedex</button>
-        <button onClick={() => goToDetails(history, "nomeDoPokemon")}>Detalhes</button>
     </div>)
 }

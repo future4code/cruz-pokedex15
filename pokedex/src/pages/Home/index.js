@@ -10,9 +10,8 @@ export default function Home() {
             <h1>Home</h1>
             <button onClick={() => goToHome(history)}>Home</button>
             <button onClick={() => goToPokedex(history)}>Pokedex</button>
-            <button onClick={() => goToDetails(history, "nomeDoPokemon")}>Detalhes</button>
             <c.HomeContainer>
-                <PokemonCard />
+                <PokemonCard history={history}/>
             </c.HomeContainer>
         </>
     )
