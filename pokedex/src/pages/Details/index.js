@@ -1,28 +1,17 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useContext } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
+import { ContextoPokemon } from '../../context'
+import { goToHome, goToPokedex } from '../../routes/coordinator'
 import Status from './Status/index'
 
 export default function Details() {
 
+    const history = useHistory()
     const params = useParams()
-    const [pokemon, setPokemon] = useState({})
-    const [loading, setLoading] = useState(true)
+    const pokemons = useContext(ContextoPokemon)
+    const pokemon = pokemons.find(pokemon => (pokemon.name === params.id || pokemon.id === Number(params.id)))
 
-    useEffect(() => {
-        getPokemon()
-    }, [])
-
-    const getPokemon = async () => {
-        try {
-            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
-            setPokemon(response.data)
-            setLoading(false)
-        }
-        catch (error) {
-            console.log(error)
-        }
-    }
-
-    return <Status loading={loading} pokemon={pokemon}/>
+    return <div>
+        {pokemon && <Status pokemon={pokemon} history={history}/>}
+    </div>
 }

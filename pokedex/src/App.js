@@ -26,7 +26,8 @@ function App() {
     for (let pokemon of xd) {
       try {
         const response = await axios.get(pokemon.url)
-        listaPokemon.push(response.data)
+        const teste = {...response.data, image: `https://pokeres.bastionbot.org/images/pokemon/${response.data.id}.png`}
+        listaPokemon.push(teste)
       }
       catch (error) {
         console.log(error)
