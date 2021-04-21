@@ -3,8 +3,9 @@ import { CardContainer, Photo, Descprition } from './style'
 import { Skills } from '../../styles/styles'
 import { ContextoPokemon } from '../../context'
 import { useContext } from 'react'
+import { goToDetails } from '../../routes/coordinator'
 
-function PokemonCard() {
+function PokemonCard(props) {
     const pokemons = useContext(ContextoPokemon)
 
     return (
@@ -21,6 +22,7 @@ function PokemonCard() {
                     {pokemon.types[1] && <span className={pokemon.types[1].type.name}>{pokemon.types[1].type.name}</span>}
                 </Skills>
             </Descprition>
+            <button onClick={() => goToDetails(props.history, pokemon.name)}>Detalhes</button>
         </CardContainer>
         })}
         </>

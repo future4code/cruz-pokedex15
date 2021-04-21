@@ -12,7 +12,7 @@ export default function Home() {
             <button onClick={() => goToPokedex(history)}>Pokedex</button>
             <button onClick={() => goToDetails(history, "nomeDoPokemon")}>Detalhes</button>
             <c.HomeContainer>
-                <PokemonCard />
+                <PokemonCard history={history}/>
             </c.HomeContainer>
         </>
     )
