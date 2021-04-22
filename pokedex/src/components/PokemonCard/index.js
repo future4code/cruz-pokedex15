@@ -1,17 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CardContainer, Photo, Descprition } from './style'
 import { Skills } from '../../styles/styles'
-import { ContextoPokemon } from '../../context'
+import { GlobalStateContext } from '../../global/GlobalStateContext'
 import { useContext } from 'react'
 import { goToDetails } from '../../routes/coordinator'
 
 function PokemonCard(props) {
-    const pokemons = useContext(ContextoPokemon)
+    const pokemons = useContext(GlobalStateContext).pokemons
+    const [inPokedex, changePokedex] = useContext(GlobalStateContext).pokedex
 
-    return (
-        <>
-        {pokemons.length > 1 && pokemons.map((pokemon) => {
-            return <CardContainer>
+    useEffect(() => {
+        renderPokemons()
+        console.log(2)
+    }, [inPokedex])
+
+    const renderPokemons = () => {
+
+        const pokemonsFiltrados = pokemons.filter((pokemon) => {
+            if (props.home && !inPokedex.includes(pokemon.id)) {
+                return true
+            }
+            else if (!props.home && inPokedex.includes(pokemon.id)) {
+                return true
+            }
+            else {
+                return false
+            }
+        })
+
+        return pokemonsFiltrados.length > 0 && pokemonsFiltrados.map((pokemon) => {
+            return <CardContainer key={pokemon.name}>
             <Photo>
                 <img src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`} alt="" title="" />
             </Photo>
@@ -23,8 +41,14 @@ function PokemonCard(props) {
                 </Skills>
             </Descprition>
             <button onClick={() => goToDetails(props.history, pokemon.name)}>Detalhes</button>
+            <button onClick={() => changePokedex(pokemon.id)}>{props.home? "Adicionar" : "Remover"}</button>
         </CardContainer>
-        })}
+        })
+    }
+
+    return (
+        <>
+        {renderPokemons()}
         </>
     )
 }

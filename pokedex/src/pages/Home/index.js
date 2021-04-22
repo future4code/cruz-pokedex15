@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom'
-import { goToHome, goToPokedex, goToDetails } from '../../routes/coordinator'
+import { goToHome, goToPokedex } from '../../routes/coordinator'
 import PokemonCard from '../../components/PokemonCard/index'
 import * as c from './style'
 
@@ -11,7 +11,7 @@ export default function Home() {
             <button onClick={() => goToHome(history)}>Home</button>
             <button onClick={() => goToPokedex(history)}>Pokedex</button>
             <c.HomeContainer>
-                <PokemonCard history={history}/>
+                <PokemonCard history={history} home={true}/>
             </c.HomeContainer>
         </>
     )
