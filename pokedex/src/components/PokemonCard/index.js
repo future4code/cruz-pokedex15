@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { CardContainer, Photo, Descprition } from './style'
 import { Skills } from '../../styles/styles'
 import { GlobalStateContext } from '../../global/GlobalStateContext'
@@ -8,12 +8,19 @@ import { goToDetails } from '../../routes/coordinator'
 function PokemonCard(props) {
     
     const pokemons = useContext(GlobalStateContext).pokemons
+    const [inPokedex, changePokedex] = useContext(GlobalStateContext).pokedex
+    const [atualizar, setAtualizar] = useState(true)
+
+    const selectPokemon = (id) => {
+        changePokedex(id)
+        setAtualizar(!atualizar)
+    }
 
     const pokemonsFiltrados = pokemons.filter((pokemon) => {
-        if (props.home && !props.pokedex.includes(pokemon.id)) {
+        if (props.home && !inPokedex.includes(pokemon.id)) {
             return true
         }
-        else if (!props.home && props.pokedex.includes(pokemon.id)) {
+        else if (!props.home && inPokedex.includes(pokemon.id)) {
             return true
         }
         else {
@@ -36,7 +43,7 @@ function PokemonCard(props) {
                 </Skills>
             </Descprition>
             <button onClick={() => goToDetails(props.history, pokemon.name)}>Detalhes</button>
-            <button onClick={() => props.selectPokemon(pokemon.id)}>{props.home? "Adicionar" : "Remover"}</button>
+            <button onClick={() => selectPokemon(pokemon.id)}>{props.home? "Adicionar" : "Remover"}</button>
         </CardContainer>
         })}
         </>
