@@ -83,7 +83,7 @@ export default function Status(props) {
                 </c.PokedexStatistic>
             </c.BoxRight>
         </c.DetailsContainer>
-        <h1>{props.pokemon.name}</h1>
+        {/* <h1>{props.pokemon.name}</h1>
         <img src={`https://raw.githubusercontent.com/geekygreek7/animated-pokemon-gifs/master/${props.pokemon.id}.gif`} alt="Foto do Pokemon" />
         {!props.loading && props.pokemon.stats.map((pokemon) => {
         <img src={props.pokemon.image} alt="Foto do Pokemon"/>
@@ -98,6 +98,6 @@ export default function Status(props) {
         <h3>Types:</h3>
         {props.pokemon.types.slice(0, 5).map((pokemon) => {
             return <p>{pokemon.type.name}</p>
-        })}
+        })} */}
     </div>)
 }
