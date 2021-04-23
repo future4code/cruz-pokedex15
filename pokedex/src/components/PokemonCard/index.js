@@ -6,29 +6,24 @@ import { useContext } from 'react'
 import { goToDetails } from '../../routes/coordinator'
 
 function PokemonCard(props) {
+    
     const pokemons = useContext(GlobalStateContext).pokemons
-    const [inPokedex, changePokedex] = useContext(GlobalStateContext).pokedex
 
-    useEffect(() => {
-        renderPokemons()
-        console.log(2)
-    }, [inPokedex])
+    const pokemonsFiltrados = pokemons.filter((pokemon) => {
+        if (props.home && !props.pokedex.includes(pokemon.id)) {
+            return true
+        }
+        else if (!props.home && props.pokedex.includes(pokemon.id)) {
+            return true
+        }
+        else {
+            return false
+        }
+    })
 
-    const renderPokemons = () => {
-
-        const pokemonsFiltrados = pokemons.filter((pokemon) => {
-            if (props.home && !inPokedex.includes(pokemon.id)) {
-                return true
-            }
-            else if (!props.home && inPokedex.includes(pokemon.id)) {
-                return true
-            }
-            else {
-                return false
-            }
-        })
-
-        return pokemonsFiltrados.length > 0 && pokemonsFiltrados.map((pokemon) => {
+    return (
+        <>
+        {pokemonsFiltrados.length > 0 && pokemonsFiltrados.map((pokemon) => {
             return <CardContainer key={pokemon.name}>
             <Photo>
                 <img src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`} alt="" title="" />
@@ -41,14 +36,9 @@ function PokemonCard(props) {
                 </Skills>
             </Descprition>
             <button onClick={() => goToDetails(props.history, pokemon.name)}>Detalhes</button>
-            <button onClick={() => changePokedex(pokemon.id)}>{props.home? "Adicionar" : "Remover"}</button>
+            <button onClick={() => props.selectPokemon(pokemon.id)}>{props.home? "Adicionar" : "Remover"}</button>
         </CardContainer>
-        })
-    }
-
-    return (
-        <>
-        {renderPokemons()}
+        })}
         </>
     )
 }
