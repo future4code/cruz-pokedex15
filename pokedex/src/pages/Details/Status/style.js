@@ -54,18 +54,55 @@ export const BoxRight = styled.div`
 
 `
 export const PokedexData = styled.div`
-    & li:nth-child(2) > span:nth-child(n+2) {
-        padding-left: 5px;
-        margin-left: 4px;
-        border-left: 1px solid #aaa;
-        color: #777;
+    position: relative;
+    & img:first-of-type {
+        padding-left: 16px;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
     }
-    & li:nth-child(2) > span:nth-child(2) {
-        border: 0;
+    & li:nth-child(2) {
+        padding: 14px 0;
+    }
+
+    & li:nth-child(2) > span:nth-child(n+2) {
+        margin-left: 6px;
+        color: #777;
+        background: #F3F3F3;
+        border-radius: 3px;
+        padding: 4px 6px;
+        border: 1px solid #ddd;
     }
 `
 
 export const PokedexStatistic = styled.div`
+    & ul li div {
+        flex-grow: 1;
+    }
+    & ul li span:nth-child(3){
+        background: #9bcc50;
+        margin-right: 6px;
+        border-radius: 4px;
+    }
+    & ul li:nth-child(1) span:nth-child(3){
+        width: 33%;
+    }
+    & ul li:nth-child(2) span:nth-child(3){
+        width: 46%;
+    }
+    & ul li:nth-child(3) span:nth-child(3){
+        width: 66%;
+    }
+    & ul li:nth-child(4) span:nth-child(3){
+        width: 33%;
+    }
+    & ul li:nth-child(5) span:nth-child(3){
+        width: 11%;
+    }
+    & ul li:nth-child(6) span:nth-child(3){
+        width: 22%;
+    }
     & > ul li {
         display: flex;
         flex-flow: row nowrap;

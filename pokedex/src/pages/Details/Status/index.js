@@ -15,12 +15,13 @@ export default function Details(props) {
         <c.DetailsContainer>
             <c.BoxLeft>
                 <c.Photo>
-                    <img src="https://pokeres.bastionbot.org/images/pokemon/1.png" alt="" title="" />
+                    <img src="https://pokeres.bastionbot.org/images/pokemon/125.png" alt="" title="" />
                 </c.Photo>
             </c.BoxLeft>
             <c.BoxRight>
                 <c.PokedexData>
                     <h1>Dados do Pokemon:</h1>
+                    <img src="https://raw.githubusercontent.com/geekygreek7/animated-pokemon-gifs/master/125.gif" alt="" title=""/>
                     <ul>
                         <li>
                             <c.SkillsDetails>
@@ -44,26 +45,38 @@ export default function Details(props) {
                     <ul>
                         <li>
                             <span>HP:</span>
+                            <div></div>
+                            <span></span>
                             <span>100</span>
                         </li>
                         <li>
                             <span>Attack:</span>
+                            <div></div>
+                            <span></span>
                             <span>100</span>
                         </li>
                         <li>
                             <span>Defense:</span>
+                            <div></div>
+                            <span></span>
                             <span>100</span>
                         </li>
                         <li>
                             <span>Special-Attack:</span>
+                            <div></div>
+                            <span></span>
                             <span>100</span>
                         </li>
                         <li>
                             <span>Special-Defense:</span>
+                            <div></div>
+                            <span></span>
                             <span>100</span>
                         </li>
                         <li>
                             <span>Speed:</span>
+                            <div></div>
+                            <span></span>
                             <span>100</span>
                         </li>
                     </ul>
