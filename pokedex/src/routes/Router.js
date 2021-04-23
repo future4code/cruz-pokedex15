@@ -1,7 +1,7 @@
 import { Switch, Route, BrowserRouter} from 'react-router-dom'
 import Details from '../pages/Details/index'
 import Home from '../pages/Home'
-import Pokedex from '../pages/Pokedex'
+import Pokedex from '../pages/Pokedex/index'
 
 export default function Router() {
     return (<BrowserRouter>
