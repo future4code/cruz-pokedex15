@@ -15,7 +15,7 @@ function PokemonCard(props) {
         changePokedex(id)
         setAtualizar(!atualizar)
     }
-
+    
     const pokemonsFiltrados = pokemons.filter((pokemon) => {
         if (props.home && !inPokedex.includes(pokemon.id)) {
             return true
