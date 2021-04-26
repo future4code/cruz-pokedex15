@@ -1,13 +1,28 @@
 import styled from 'styled-components'
 
+export const Photo = styled.div`
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 200px;
+    position: relative;
+    background: #eee;
+    transform: scale(0.90);
+    transition: all 0.2s ease;
+    & img {
+        position: absolute;
+        width: 80%;
+    }
+`
+
 export const CardContainer = styled.div`
     position: relative;
     display: flex;
     flex-flow: column nowrap;
     margin: 2px 2px;
     background: #fff;
-    transform: scale(0.90);
-    transition: all 0.2s ease;
     & > :nth-child(2){
         padding: 15px 10px;
     }
@@ -26,23 +41,8 @@ export const CardContainer = styled.div`
             opacity: 1;
         }
     }
-    &:hover {
+    &:hover ${Photo} {
         transform: scale(1.0);
-    }
-`
-
-export const Photo = styled.div`
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 180px;
-    width: 200px;
-    position: relative;
-    background: #eee;
-    & img {
-        position: absolute;
-        width: 80%;
     }
 `
 
@@ -60,7 +60,7 @@ export const Buttons = styled.div`
         visibility: hidden;
         width: 100%;
         height: 100%;
-        background: rgba(255,255,255, 0.80);
+        background: rgba(255,255,255, 0.65);
     }
     & > * {
         position: relative;
@@ -75,9 +75,9 @@ export const Buttons = styled.div`
         opacity: 0;
     }
     & > :first-child {
-        top: -40px;
+        top: -50px;
     }
     & > :last-child {
-        top: 40px;
+        top: 50px;
     }
 `

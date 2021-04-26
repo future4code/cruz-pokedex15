@@ -81,27 +81,9 @@ export const PokedexStatistic = styled.div`
         flex-grow: 1;
     }
     & ul li span:nth-child(3){
-        background: #9bcc50;
+        ${'' /* background: #9bcc50; */}
         margin-right: 6px;
         border-radius: 4px;
-    }
-    & ul li:nth-child(1) span:nth-child(3){
-        width: 33%;
-    }
-    & ul li:nth-child(2) span:nth-child(3){
-        width: 46%;
-    }
-    & ul li:nth-child(3) span:nth-child(3){
-        width: 66%;
-    }
-    & ul li:nth-child(4) span:nth-child(3){
-        width: 33%;
-    }
-    & ul li:nth-child(5) span:nth-child(3){
-        width: 11%;
-    }
-    & ul li:nth-child(6) span:nth-child(3){
-        width: 22%;
     }
     & > ul li {
         display: flex;
@@ -118,4 +100,8 @@ export const SkillsDetails = styled(Skills)`
         color: #222;
         padding: 0;
     }
+`
+export const Est = styled.span`
+    width: ${({teste}) => (teste)}%;
+    background: ${({color}) => (color)};
 `
