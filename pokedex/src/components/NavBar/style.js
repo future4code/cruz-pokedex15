@@ -11,7 +11,9 @@ export const Nav = styled.nav`
 `
 
 export const NavContainer = styled(Container)`
+    justify-content: center;
     & button{
+        margin: 0 6px;
         padding: 10px;
     }
 `

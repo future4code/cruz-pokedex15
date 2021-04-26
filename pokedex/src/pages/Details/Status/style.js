@@ -5,6 +5,7 @@ import { Skills } from '../../../styles/styles'
 export const DetailsContainer = styled(Container)`
     display: flex;
     flex-flow: row nowrap;
+    padding: 60px 0;
     & > :last-child {
         align-self: normal;
     }

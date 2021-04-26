@@ -29,7 +29,7 @@ export default function GlobalState(props) {
   
     const getPokemons = async () => {
       try {
-          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=151`)
+          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=15`)
           getPokemonsDetails(response.data.results)
       }
       catch (error) {

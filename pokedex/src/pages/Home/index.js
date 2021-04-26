@@ -8,9 +8,8 @@ export default function Home() {
     const history = useHistory()
     
     return (
-        <>  
+        <>
             <NavBar history={history}/>
-            <h1>Home</h1>
             <c.HomeContainer>
                 <PokemonCard history={history} home={true} />
             </c.HomeContainer>

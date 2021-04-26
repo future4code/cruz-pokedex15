@@ -3,7 +3,6 @@ import { goToHome, goToPokedex } from '../../routes/coordinator'
 import { Nav, NavContainer } from './style';
 
 function NavBar(props) {
-
     return (
         <Nav>
             <NavContainer>
