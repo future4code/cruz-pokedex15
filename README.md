@@ -1,16 +1,11 @@
 # POKEDEX
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+Nome dos integrantes:
+Eduardo Silva
+Silvio Viana
 
-Link do Surge: www.link.com.br
+Link do Surge: [Surge](http://cruz-pokedex15.surge.sh/)
 
 O que funciona:
-- Item 1
-- Item 2
-
-O que não funciona: 
-- Item 3
-- Item 4
+Adicinar e Remover da Pokedex
+Ir para detalhes
